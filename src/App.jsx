@@ -5,6 +5,7 @@ import TotalPanel from './components/TotalPanel/TotalPanel';
 import './App.css'
 import Formulario from './components/Form/Formulario';
 import ListProducts from './components/ListProducts';
+import Categories from './components/Categories';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -22,8 +23,12 @@ function App() {
          <div>
            <h1>Lista de Productos</h1>
            <ListProducts />
+           <div>
+            <Categories />
+           </div>
          </div>
        </div>
+       
        
     )
    }
