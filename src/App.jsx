@@ -4,19 +4,28 @@ import viteLogo from '/vite.svg'
 import TotalPanel from './components/TotalPanel/TotalPanel';
 import './App.css'
 import Formulario from './components/Form/Formulario';
+import ListProducts from './components/ListProducts';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
- 
-  return (
-    <BrowserRouter>
-    <h1>7ecnoShop</h1>
-    <Routes>
-      <Route path='/' element={<TotalPanel/>}/>
-      <Route path='/admin/:id' element={<Formulario/>}/>
-    </Routes>
-    </BrowserRouter>
-  )
-}
+
+    return (
+       <div>
+         <BrowserRouter>
+           <h1>7ecnoShop</h1>
+           <Routes>
+             <Route path='/' element={<TotalPanel/>}/>
+             <Route path='/admin/:id' element={<Formulario/>}/>
+           </Routes>
+         </BrowserRouter>
+   
+         <div>
+           <h1>Lista de Productos</h1>
+           <ListProducts />
+         </div>
+       </div>
+       
+    )
+   }
 
 export default App
