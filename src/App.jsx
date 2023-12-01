@@ -6,31 +6,32 @@ import './App.css'
 import Formulario from './components/Form/Formulario';
 import ListProducts from './components/ListProducts';
 import Categories from './components/Categories';
+import ListClient from './components/UsersId/usersId';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
 
-    return (
-       <div>
-         <BrowserRouter>
-           <h1>7ecnoShop</h1>
-           <Routes>
-             <Route path='/' element={<TotalPanel/>}/>
-             <Route path='/admin/:id' element={<Formulario/>}/>
-           </Routes>
-         </BrowserRouter>
-   
-         <div>
-           <h1>Lista de Productos</h1>
-           <ListProducts />
-           <div>
-            <Categories />
-           </div>
-         </div>
-       </div>
-       
-       
-    )
-   }
+  return (
+    <div>
+      <BrowserRouter>
+        <h1>7ecnoShop</h1>
+        <Routes>
+          <Route path='/' element={<TotalPanel />} />
+          <Route path='/admin/:id' element={<Formulario />} />
+        </Routes>
+      </BrowserRouter>
+      <ListClient />
+      <div>
+        <h1>Lista de Productos</h1>
+        <ListProducts />
+        <div>
+          <Categories />
+        </div>
+      </div>
+    </div>
+
+
+  )
+}
 
 export default App
