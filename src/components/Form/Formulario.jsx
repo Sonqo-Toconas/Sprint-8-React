@@ -17,8 +17,8 @@ function formulario() {
         defaultValues: {
             name: producto ? producto.name : '',
             description: producto ? producto.description : '',
-            category: producto ? producto.category_id : '',
-            color: producto ? producto.color_id : '',
+            category: producto ? producto.category : '',
+            color: producto ? producto.color : '',
             price: producto ? producto.price : ''
         }
     });
@@ -108,10 +108,10 @@ function formulario() {
     }, [dataProductForCreate])
 
     useEffect(() => {
-        fetch(`http://localhost:3030/api/product/${id}`)
+        fetch(`http://localhost:3030/api/products/${id}`)
             .then(response => response.json())
             .then(data => {
-                setProducto(data)
+                setProducto(data.data)
             })
             .catch(error => console.log(error))
     }, [id])
@@ -173,7 +173,7 @@ function formulario() {
                     </div>
 
                     <div className={Style.inputConteiner}>
-                        <label for="category">Categoría a cambiar:</label>
+                        <label htmlFor="category">Categoría a cambiar:</label>
                         <select id="category" name="category"
                             {...register('category', {
                                 required: true,

@@ -4,9 +4,6 @@ import viteLogo from '/vite.svg'
 import TotalPanel from './components/TotalPanel/TotalPanel';
 import './App.css'
 import Formulario from './components/Form/Formulario';
-import ListProducts from './components/ListProducts';
-import Categories from './components/Categories';
-import ListClient from './components/UsersId/usersId';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -16,18 +13,13 @@ function App() {
       <BrowserRouter>
         <h1>7ecnoShop</h1>
         <Routes>
-          <Route path='/' element={<TotalPanel />} />
+          <Route path='/' element={<TotalPanel />}>
+    
+          
+          </Route>
           <Route path='/admin/:id' element={<Formulario />} />
         </Routes>
       </BrowserRouter>
-      <ListClient />
-      <div>
-        <h1>Lista de Productos</h1>
-        <ListProducts />
-        <div>
-          <Categories />
-        </div>
-      </div>
     </div>
 
 

@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { FaUserClock } from "react-icons/fa";
+import { MdOutlinePhoneIphone } from "react-icons/md";
+
 
 function ListClient() {
     const [lastUser, setLastUser] = useState([]);
@@ -24,9 +27,10 @@ function ListClient() {
 
     return (
         <div>
-            <p>Último usuario registrado: {lastUser.name}</p>
-            <p>Último producto registrado: {lastProduct.name}</p>
-        </div >
+            <h1>Ultimos Registros</h1>
+            <p>Último usuario registrado: <strong>{lastUser.name} <FaUserClock style={{ marginBottom: -2 }}/></strong></p>
+            <p>Último producto registrado: <strong> {lastProduct.name} <MdOutlinePhoneIphone style={{ marginBottom: -2 }}/> </strong> </p>
+        </div>
     )
 }
 

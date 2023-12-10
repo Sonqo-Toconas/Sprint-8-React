@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './TotalPanel.css'
+import Style from "./TotalPanel.module.css";
+import ListProducts from '../ListProducts';
+import Categories from '../Categories';
+import ListClient from '../UsersId/usersId';
+import Solds from '../PanelSolds/Solds';
 
 function TotalPanel() {
     const [totalProducts, setTotalProducts] = useState([]);
@@ -34,10 +38,15 @@ function TotalPanel() {
     }, [])
 
     return (
-        <div className="totalContainer">
+        <div className={Style.totalContainer}>
             <p>Total de productos {totalProducts}</p>
             <p>Total de usuarios {totalUsers}</p>
             <p>Total de categorías {totalCategories}</p>
+            
+            <ListClient />
+            <ListProducts />
+            <Categories />
+            <Solds/>
         </div >
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Style from "./Product.module.css";
 function ListProducts() {
     const [products, setProducts] = useState([]);
 
@@ -13,18 +13,17 @@ function ListProducts() {
     }, []);
 
     return (
-        <div>
-            {console.log(products[1])}
-            <ul>
+        <div className={Style.conteinerCard}>
+            <h2>Lista de productos</h2>
+            
             {products.map((producto, i) => {
-    return (
-        <li key={i}>
-            <a href={`/products/${producto.id}`}>{producto.name}</a>
-        </li>
-    );
+                return (
+                    <div className={Style.cardProduct} key={i} >
+                        <a href={`/admin/${producto.id}`}>{producto.name}</a>
+                    </div>
+                );
 })}
 
-            </ul>
 
         </div >
 

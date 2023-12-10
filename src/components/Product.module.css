@@ -1,0 +1,16 @@
+
+.conteinerCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardProduct {
+    height: 30px;
+    width: 90%;
+}
+
+.cardProduct a {
+    font-weight: bold;
+    color: inherit;
+}
