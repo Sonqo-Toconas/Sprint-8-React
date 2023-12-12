@@ -123,7 +123,7 @@ function formulario() {
             setValue('description', producto.description);
             setValue('category', producto.category_id);
             setValue('color', producto.color_id);
-            setValue('price', producto.price);
+            setValue('price', Math.floor(producto.price));
         }
     }, [producto]);
 
@@ -168,8 +168,16 @@ function formulario() {
                     </div>
 
                     <div className={Style.inputConteiner}>
-                        <label for="image">Imagenes:</label>
-                        <input type="file" id="image" name="image" {...register('image')}></input>
+                        <label htmlFor="image">Imagenes:</label>
+                        <input type="file" id="image" name="image" {...register('image', {
+                            required:{
+                                value: true,
+                                message:'campo vacio'
+                            } 
+                        })}></input>
+                        {errors.image && (
+                            <span>{errors.image.message}</span>
+                        )}
                     </div>
 
                     <div className={Style.inputConteiner}>
